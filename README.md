@@ -35,6 +35,7 @@ Things you may want to cover:
 ### Association
 - has_many :comments
 - has_many :groups, through: :users_groups
+- has_many :users_groups
 
 ## messages テーブル
 |Column|Type|Options|
@@ -52,9 +53,11 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, unique: true|
-|group_name|string|null: false, unique: true|
+|name|string|null: false, unique: true|
 ### Association
 - has_many :users, through: :users_groups
+- has_many :users_groups
+- has_many :messages
 
 ## users_groups テーブル
 |Column|Type|Options|
