@@ -1,0 +1,148 @@
+@import "./reset";
+@import "font-awesome-sprockets";
+@import "./font-awesome";
+$pad: 20px;
+$header-height: 100px;
+$main-inner-margin: 40px;
+$edit-btn-color: #4fceee;
+$edit-btn-side-padding: 20px;
+$btn-padding: 0 20px 0 20px;
+$sideBar-fontColor: #ffffff;
+.wrapper {
+  display: flex;
+  height: 100vh;
+  .contents {
+    background-color: #2f3e51;
+    width: 300px;
+    &__header {
+      background-color: #253141;
+      display: flex;
+      margin-bottom: 20px;
+      line-height: 100px;
+      height: $header-height;
+      padding: 0 $pad 0 $pad;
+      &--userName {
+        color: $sideBar-fontColor;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      &__btn {
+        color: $sideBar-fontColor;
+        margin-left: 5px;
+        &__edit {
+          margin-left: auto;
+        }
+      }
+    }
+    &__group {
+      padding: 0 $pad 0 $pad;
+      color: $sideBar-fontColor;
+    }
+  }
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    &__header {
+      height: $header-height;
+      border-bottom: solid 1px #eeeeee;
+      display: flex;
+      justify-content: space-between;
+      &__group {
+        margin-top: 35px;
+        margin-left: $main-inner-margin;
+        &__name {
+          font-size: 20px;
+          color: #333333;
+          margin-bottom: 15px;
+        }
+        &__members {
+          font-size: 12px;
+          color: #999999;
+        }
+      }
+      &__edit {
+        margin-bottom: 30px;
+        margin-right: $main-inner-margin;
+        margin-top: 28px;
+        padding: $btn-padding;
+        border: solid 1px $edit-btn-color;
+        color: $edit-btn-color;
+        line-height: 40px;
+      }
+    }
+    &__body {
+      flex: 1;
+      background-color: #fafafa;
+      &__message {
+        margin-left: $main-inner-margin;
+        margin-top: 46px;
+        &__userName {
+          font-size: 16px;
+          font-weight: bold;
+          color: #434A54;
+          margin-right: 10px;
+        }
+        &__date {
+          font-size: 12px;
+          color: #999999;
+        }
+        &__text {
+          margin-top: 10px;
+          font-size: 14px;
+          color: #434a54;
+        }
+      }
+    }
+    &__footer {
+      $form-height: 50px;
+      height: 90px;
+      background-color: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &__form {
+        display: flex;
+        margin-left: $main-inner-margin;
+        margin-right: $main-inner-margin;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        height: $form-height;
+        &__input {
+          margin-right: 15px;
+          flex: 1;
+          height: $form-height;
+          display: flex;
+          position: relative;
+          &__field {
+            height: $form-height;
+            width: 100%;
+            padding-left: 10px;
+            border: 0px;
+            box-sizing: border-box;
+          }
+          label {
+            $font-size: 16px;
+            $unknown-margin: 4px;
+            height: $form-height;
+            position: absolute;
+            font-size: $font-size;
+            right: 10px;
+            padding-top: ($form-height / 2) - ($font-size / 2) - $unknown-margin;
+          }
+          #postImg {
+            display: none;
+          }
+        }
+        &__sendBtn {
+          height: $form-height;
+          background-color: #38AEF0;
+          padding: $btn-padding;
+          line-height: $form-height;
+          color: white;
+        }
+      }
+    }
+  }
+}
