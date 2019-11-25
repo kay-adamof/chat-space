@@ -2,6 +2,8 @@
 @import "font-awesome-sprockets";
 @import "./font-awesome";
 @import "./user.scss";
+@import "config/colors";
+@import "modules/flash";
 $pad: 20px;
 $header-height: 100px;
 $main-inner-margin: 40px;
