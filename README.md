@@ -1,3 +1,7 @@
+---
+marp: false
+---
+
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -23,7 +27,7 @@ Things you may want to cover:
 
 * ...
 
-# DB設計  
+# DB設計
 
 ## users テーブル
 |Column|Type|Options|

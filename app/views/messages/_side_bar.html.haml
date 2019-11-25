@@ -1,10 +1,10 @@
 .contents
   .contents__header
     .contents__header--userName
-      Nick
+    = current_user.name
     =link_to "#", class: "contents__header__btn contents__header__btn__edit" do
       = icon('fas', 'edit', class: "contents__header__btn__icon")
-    =link_to "#", class: "contents__header__btn contents__header__btn__cog" do
+    =link_to edit_user_path(current_user), class: "contents__header__btn contents__header__btn__cog" do
       = icon('fas', 'cog', class: "contents__header__btn__icon")
   .contents__group
     %p test
@@ -12,4 +12,3 @@
   .contents__group
     %p test_2
     %p メッセージなし
-
