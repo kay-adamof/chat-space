@@ -2,13 +2,15 @@
   .contents__header
     .contents__header--userName
     = current_user.name
-    =link_to "#", class: "contents__header__btn contents__header__btn__edit" do
+    =link_to new_group_path, class: "contents__header__btn contents__header__btn__edit" do
       = icon('fas', 'edit', class: "contents__header__btn__icon")
     =link_to edit_user_path(current_user), class: "contents__header__btn contents__header__btn__cog" do
       = icon('fas', 'cog', class: "contents__header__btn__icon")
   .contents__group
-    %p test
-    %p メッセージはなし
-  .contents__group
-    %p test_2
-    %p メッセージなし
+    - current_user.groups.each do |group|
+      .group
+        = link_to group_messages_path(group) do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。
