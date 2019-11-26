@@ -7,8 +7,10 @@
     =link_to edit_user_path(current_user), class: "contents__header__btn contents__header__btn__cog" do
       = icon('fas', 'cog', class: "contents__header__btn__icon")
   .contents__group
-    %p test
-    %p メッセージはなし
-  .contents__group
-    %p test_2
-    %p メッセージなし
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。
