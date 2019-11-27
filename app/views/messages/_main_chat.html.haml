@@ -19,9 +19,14 @@
   .main__footer
     .main__footer__form
       .main__footer__form__input
-        %input.main__footer__form__input__field(type="textarea" placeholder='type a message')
-        %label(for="postImg")
-          = icon('fas', 'image')
-          %input(type="file" id="postImg")
+        = form_for [@group, @messages] do |f|
+          = f.text_field :content, class: 'main__footer__form__input__field', placeholder: 'type a message'
+          = f.label :image do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+          -# %input.main__footer__form__input__field(type="textarea" placeholder='type a message')
+          -# %label(for="postImg")
+            -# = icon('fas', 'image')
+            -# %input(type="file" id="postImg")
       .main__footer__form__sendBtn
         send
