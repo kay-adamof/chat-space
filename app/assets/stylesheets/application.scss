@@ -135,7 +135,7 @@ $sideBar-fontColor: #ffffff;
             right: 10px;
             padding-top: ($form-height / 2) - ($font-size / 2) - $unknown-margin;
           }
-          #postImg {
+          .hidden {
             display: none;
           }
         }
