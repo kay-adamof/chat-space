@@ -13,4 +13,7 @@
           .group__name
             = group.name
           .group__message
-            メッセージはまだありません。
+            - if @messages.empty?
+              メッセージはまだありません
+            - else
+              = @messages.last

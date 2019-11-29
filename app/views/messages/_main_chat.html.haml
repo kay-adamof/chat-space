@@ -9,13 +9,7 @@
       edit
   .main__body
     .main__body__message
-      %p
-        %span.main__body__message__userName
-          shoya
-        %span.main__body__message__date
-          2019/20/20
-      .main__body__message__text
-        this is a first message
+      = render @messages
   .main__footer
     .main__footer__form
       .main__footer__form__input
@@ -24,9 +18,5 @@
           = f.label :image do
             = icon('fas', 'image', class: 'icon')
             = f.file_field :image, class: 'hidden'
-          -# %input.main__footer__form__input__field(type="textarea" placeholder='type a message')
-          -# %label(for="postImg")
-            -# = icon('fas', 'image')
-            -# %input(type="file" id="postImg")
       .main__footer__form__sendBtn
         send
