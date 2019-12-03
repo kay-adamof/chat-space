@@ -5,10 +5,9 @@
         = @group.name
       .main__header__group__members
         %span
-          - @group.users.each do |u|
-            = u.name
+          = @group.users.map(&:name).join(" / ")
     .main__header__edit
-      edit
+      = link_to "edit", edit_group_path(@group.id)
   .main__body
     .main__body__message
       = render @messages
