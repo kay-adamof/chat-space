@@ -13,7 +13,4 @@
           .group__name
             = group.name
           .group__message
-            - if group.messages.empty?
-              メッセージはまだありません
-            - else
-              = group.messages.last.content
+            = group.show_last_message
