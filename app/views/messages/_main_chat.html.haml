@@ -2,15 +2,16 @@
   .main__header
     .main__header__group
       .main__header__group__name
-        my_group
+        = @group.name
       .main__header__group__members
-        members:
+        %span
+          - @group.users.each do |u|
+            = u.name
     .main__header__edit
       edit
   .main__body
     .main__body__message
       = render @messages
-
   .main__footer
     .main__footer__form
       .main__footer__form__input
