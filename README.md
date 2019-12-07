@@ -30,18 +30,22 @@ Things you may want to cover:
 # DB設計
 
 ## users テーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, unique: true|
 |name|string|null: false, unique: true|
 |email_address|string|null: false, unique: true|
 |password|string|null: false, unique: true|
+
 ### Association
+
 - has_many :comments
 - has_many :groups, through: :users_groups
 - has_many :users_groups
 
 ## messages テーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, unique: true|
@@ -49,21 +53,27 @@ Things you may want to cover:
 |photo|text||
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
+
 ### Association
+
 - belongs_to :user
 - belongs_to :group
 
 ## groups テーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, unique: true|
 |name|string|null: false, unique: true|
+
 ### Association
+
 - has_many :users, through: :users_groups
 - has_many :users_groups
 - has_many :messages
 
 ## users_groups テーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, unique: true|
@@ -71,5 +81,8 @@ Things you may want to cover:
 |group_id|integer|foreign_key: true|
 
 ### Association
+
 - belongs_to :user
 - belongs_to :group
+
+### 非同期通信を使ったメッセージ送信機能の実装
