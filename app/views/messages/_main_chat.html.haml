@@ -19,5 +19,4 @@
           = f.label :image do
             = icon('fas', 'image', class: 'icon')
             = f.file_field :image, class: 'hidden'
-      .main__footer__form__sendBtn
-        send
+          = f.submit 'send', class: "main__footer__form__sendBtn"
