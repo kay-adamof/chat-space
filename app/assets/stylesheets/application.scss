@@ -77,6 +77,7 @@ $sideBar-fontColor: #ffffff;
     }
     &__body {
       flex: 1;
+      overflow: scroll;
       background-color: #fafafa;
       &__message {
         margin-left: $main-inner-margin;
