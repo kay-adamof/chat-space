@@ -1,7 +1,5 @@
-json.text "テキスト"
-json.created_at @message.created_at
-json.content @message.content
-json.image @message.image
-json.(@message, :created_at, :updated_at)
-
-binding.pry
+json.content       @message.content
+json.image         @message.image.url
+json.user_name     @message.user.name
+json.created_at    @message.created_at.strftime('%Y/%m/%d/%H:%M:%S')
+json.id            @message.id
