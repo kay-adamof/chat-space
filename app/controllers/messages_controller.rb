@@ -20,7 +20,7 @@ class MessagesController < ApplicationController
       format.html { redirect_to group_messages_path, notice: "メッセージを送信しました" }
       format.json
     end
-    binding.pry
+
   end
 
   private
