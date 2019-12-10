@@ -1,10 +1,7 @@
 $(function() {
   $('#new_message').on("submit", function(e) {
-
     function buildHTML(message) {
-
       var img = message.image ? `<img src=${message.image}>` : ""
-
       var html = `
       <p>
         <span class='main__body__message__userName'>
@@ -22,12 +19,9 @@ $(function() {
       </div>`
       return html;
     }
-
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action');
-    console.log(url)
-
     $.ajax({
         url: url,
         type: 'POST',
