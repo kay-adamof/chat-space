@@ -1,11 +1,10 @@
 $(function() {
   $('#new_message').on("submit", function(e) {
-    e.preventDefault();
-    var formData = new FormData(this);
-    var url = $(this).attr('action');
 
     function buildHTML(message) {
+
       var img = message.image ? `<img src=${message.image}>` : ""
+
       var html = `
       <p>
         <span class='main__body__message__userName'>
@@ -19,10 +18,15 @@ $(function() {
         <p>
           ${message.content}
         </p>
-        <img src="${img}">
+        ${img}
       </div>`
       return html;
     }
+
+    e.preventDefault();
+    var formData = new FormData(this);
+    var url = $(this).attr('action');
+    console.log(url)
 
     $.ajax({
         url: url,
@@ -33,10 +37,9 @@ $(function() {
         contentType: false
       })
       .done(function(data) {
+        debugger;
         var html = buildHTML(data);
         $('.main__body__message').append(html);
-        console.log($('.main__body__message')[0].scrollHeight)
-        console.log($('.main__body')[0].scrollHeight)
         $('.main__body').animate({
           scrollTop: $('.main__body')[0].scrollHeight,
         });
