@@ -34,11 +34,17 @@ $(function() {
       })
       .done(function(data) {
         var html = buildHTML(data);
-        $('.main__body__message').append(html)
-        console.log(this)
+        $('.main__body__message').append(html);
+        console.log($('.main__body__message')[0].scrollHeight)
+        console.log($('.main__body')[0].scrollHeight)
+        $('.main__body').animate({
+          scrollTop: $('.main__body')[0].scrollHeight,
+        });
+        $('#new_message')[0].reset()
+        $('#submit').removeAttr('disabled')
       })
       .fail(function() {
-
+        alert("メッセージ送信に失敗しました");
       });
   })
 });
