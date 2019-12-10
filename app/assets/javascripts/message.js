@@ -6,22 +6,24 @@ $(function() {
 
     function buildHTML(message) {
       var img = message.image ? `<img src=${message.image}>` : ""
-      var html = `<div class="main_body_message" data-message-id="${message.id}">
-                    <div class="main_body_message-name">
-                      ${message.user_name}
-                    </div>
-                    <div class="main_body_message-time">
-                      ${message.created_at}
-                    </div>
-                    <div class="main_body_message-text">
-                      ${ message.content}
-                    <div>
-                    <div class="main_body_message-image">
-                      ${ img}
-                    </div>
-                  </div>`
+      var html = `
+      <p>
+        <span class='main__body__message__userName'>
+          ${message.user_name}
+        </span>
+        <span class='main__body__message__date'>
+          ${message.created_at}
+        </span>
+      </p>
+      <div class='main__body__message__text'>
+        <p>
+          ${message.content}
+        </p>
+        <img src="${img}">
+      </div>`
       return html;
     }
+
     $.ajax({
         url: url,
         type: 'POST',
@@ -31,9 +33,9 @@ $(function() {
         contentType: false
       })
       .done(function(data) {
-        console.log(data)
         var html = buildHTML(data);
-        console.log(html)
+        $('.main__body__message').append(html)
+        console.log(this)
       })
       .fail(function() {
 
