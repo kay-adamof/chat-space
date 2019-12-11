@@ -96,6 +96,9 @@ $sideBar-fontColor: #ffffff;
           margin-top: 10px;
           font-size: 14px;
           color: #434a54;
+          &__image {
+            width: 100%;
+          }
         }
       }
     }
@@ -103,30 +106,32 @@ $sideBar-fontColor: #ffffff;
       $form-height: 50px;
       height: 90px;
       background-color: #ddd;
-      &__form {
-        width: 80%;
-        display: inline-block;
+      .new_message {
+        width: auto;
+        display: flex;
+        align-items: center;
         line-height: 90px;
-        margin-left: $main-inner-margin;
-        margin-right: $main-inner-margin;
-        position: relative;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-top: 20px;
         #field {
           height: $form-height;
-          width: 75%;
+          flex-grow: 1;
           padding-left: 10px;
           border-style: none;
-          margin-right: 1rem;
+          margin-right: 16px;
         }
         label {
-          font-size: 1rem;
+          font-size: 1.3rem;
           position: absolute;
           cursor: pointer;
-          left: 30rem;
+          right: 10rem;
         }
         .hidden {
           display: none;
         }
         #submit {
+          display: inline-flex;
           height: $form-height;
           cursor: pointer;
           background-color: #38AEF0;
