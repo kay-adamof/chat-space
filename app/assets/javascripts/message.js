@@ -14,6 +14,9 @@ $(function() {
           insertHTML += buildHTML(message)
         });
         $('.main__body__message').append(insertHTML);
+        $('.main__body').animate({
+          scrollTop: $('.main__body')[0].scrollHeight,
+        });
       })
       .fail(function() {
         console.log('error');
@@ -68,4 +71,5 @@ $(function() {
         $('#submit').removeAttr('disabled')
       });
   })
+  setInterval(reloadMessages, 7000);
 });
