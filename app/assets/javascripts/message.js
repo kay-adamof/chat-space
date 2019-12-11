@@ -1,4 +1,6 @@
 $(function() {
+  var last_message_id = $(".chat-space").last().data('message-id');
+  console.log(last_message_id);
   $('#new_message').on("submit", function(e) {
     function buildHTML(message) {
       var img = message.image ? `<img src=${message.image}>` : ""
