@@ -86,3 +86,5 @@ Things you may want to cover:
 - belongs_to :group
 
 ### 非同期通信を使ったメッセージ送信機能の実装
+
+### インクリメンタルサーチを実装しよう
