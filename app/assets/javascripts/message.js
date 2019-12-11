@@ -3,7 +3,7 @@ $(function() {
   var reloadMessages = function() {
     var last_message_id = $(".chat-space").last().data('message-id');
     $.ajax({
-        url: "#{last_message_id}/api/messages",
+        url: "groups/#{last_message_id}/api/messages",
         type: 'get',
         dataType: 'json',
         data: { id: last_message_id }
