@@ -31,7 +31,6 @@ $(function() {
         contentType: false
       })
       .done(function(data) {
-        debugger;
         var html = buildHTML(data);
         $('.main__body__message').append(html);
         $('.main__body').animate({
@@ -42,6 +41,8 @@ $(function() {
       })
       .fail(function() {
         alert("メッセージ送信に失敗しました");
+        $('#new_message')[0].reset()
+        $('#submit').removeAttr('disabled')
       });
   })
 });
