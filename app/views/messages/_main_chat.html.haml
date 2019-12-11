@@ -13,10 +13,9 @@
       = render @messages
   .main__footer
     .main__footer__form
-      .main__footer__form__input
-        = form_for [@group, @message] do |f|
-          = f.text_field :content, class: 'main__footer__form__input__field', placeholder: 'type a message'
-          = f.label :image do
-            = icon('fas', 'image', class: 'icon')
-            = f.file_field :image, class: 'hidden'
-          = f.submit 'send', class: 'main__footer__form__sendBtn', id: 'submit'
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, id: 'field', placeholder: 'type a message'
+        = f.label :image do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+        = f.submit 'send', id: 'submit'
