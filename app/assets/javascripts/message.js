@@ -1,32 +1,9 @@
 $(function() {
 
-  var reloadMessages = function() {
-    var last_message_id = $(".chat-space").last().data('message-id');
-    $.ajax({
-        url: "groups/#{last_message_id}/api/messages",
-        type: 'get',
-        dataType: 'json',
-        data: { id: last_message_id }
-      })
-      .done(function(messages) {
-        var insertHTML = '';
-        $.each(messages, function(i, message) {
-          insertHTML += buildHTML(message)
-        });
-        $('.main__body__message').append(insertHTML);
-        $('.main__body').animate({
-          scrollTop: $('.main__body')[0].scrollHeight,
-        });
-      })
-      .fail(function() {
-        console.log('error');
-      });
-  };
-
   function buildHTML(message) {
     var img = message.image ? `<img src=${message.image}>` : ""
     var html = `
-    <div data-message-id=${message.id}>
+    <div class="chat-space" data-message-id=${message.id}>
       <p>
         <span class='main__body__message__userName'>
           ${message.user_name}
@@ -71,5 +48,38 @@ $(function() {
         $('#submit').removeAttr('disabled')
       });
   })
-  setInterval(reloadMessages, 7000);
+
+  var reloadMessages = function() {
+    var last_message_id = $(".chat-space").last().data('message-id');
+    $.ajax({
+        url: 'api/messages',
+        type: 'get',
+        dataType: 'json',
+        data: { id: last_message_id }
+      })
+      .done(function(messages) {
+        var insertHTML = '';
+        $.each(messages, function(i, message) {
+          insertHTML += buildHTML(message)
+        });
+        $('.main__body__message').append(insertHTML);
+        $('.main__body').animate({
+          scrollTop: $('.main__body')[0].scrollHeight,
+        });
+      })
+      .fail(function() {
+        console.log('error');
+      });
+  };
+
+
+  $(window).bind("load", function() {
+    if (document.URL.match(/groups/)) {
+      setInterval(reloadMessages, 7000);
+    }
+  });
+  // if (!($('.group-field__name').data('group-id') === undefined)) {
+  //   setInterval(reloadMessages, 7000);
+  // }
+  // setInterval(reloadMessages, 7000);
 });
