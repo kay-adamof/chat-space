@@ -12,10 +12,9 @@
     .main__body__message
       = render @messages
   .main__footer
-    .main__footer__form
-      = form_for [@group, @message] do |f|
-        = f.text_field :content, id: 'field', placeholder: 'type a message'
-        = f.label :image do
-          = icon('fas', 'image', class: 'icon')
-          = f.file_field :image, class: 'hidden'
-        = f.submit 'send', id: 'submit'
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, id: 'field', placeholder: 'type a message'
+      = f.label :image do
+        = icon('fas', 'image', class: 'icon')
+        = f.file_field :image, class: 'hidden'
+      = f.submit 'send', id: 'submit'
