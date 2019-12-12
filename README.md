@@ -90,3 +90,10 @@ Things you may want to cover:
 ### インクリメンタルサーチを実装しよう
 
 ### 自動更新機能
+
+### AWS EC2 rails 起動
+
+bundle exec unicorn_rails -c config/unicorn.rb -E production -D
+でカリキュラムにないエラーが出た．
+間違って devise model User を実行し，コントロールの中に意味のないUser ディレクトリを作成していた
+のが原因
