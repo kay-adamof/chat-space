@@ -68,7 +68,7 @@ $(function() {
         });
       })
       .fail(function() {
-        console.log('error');
+        alert('error');
       });
   };
 
@@ -78,8 +78,5 @@ $(function() {
       setInterval(reloadMessages, 7000);
     }
   });
-  // if (!($('.group-field__name').data('group-id') === undefined)) {
-  //   setInterval(reloadMessages, 7000);
-  // }
-  // setInterval(reloadMessages, 7000);
+
 });
