@@ -97,3 +97,5 @@ bundle exec unicorn_rails -c config/unicorn.rb -E production -D
 でカリキュラムにないエラーが出た．
 間違って devise model User を実行し，コントロールの中に意味のないUser ディレクトリを作成していた
 のが原因
+
+### AWS 本番環境 デプロイ 実装
