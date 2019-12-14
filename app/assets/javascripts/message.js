@@ -49,7 +49,8 @@ $(function() {
       });
   })
 
-  var reloadMessages = function() {
+
+  function reloadMessages() {
     var last_message_id = $(".chat-space").last().data('message-id');
     $.ajax({
         url: 'api/messages',
@@ -67,16 +68,14 @@ $(function() {
           scrollTop: $('.main__body')[0].scrollHeight,
         });
       })
-      .fail(function() {
+      .fail(function(e) {
         alert('error');
       });
-  };
+  }
 
-
-  $(window).bind("load", function() {
-    if (document.URL.match(/groups/)) {
-      setInterval(reloadMessages, 7000);
+  setInterval(function() {
+    if (location.pathname.includes('messages')) {
+      reloadMessages();
     }
-  });
-
+  }, 7000);
 });
