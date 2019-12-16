@@ -25,7 +25,7 @@ $sideBar-fontColor: #ffffff;
       line-height: 100px;
       height: $header-height;
       padding: 0 $pad 0 $pad;
-      &--userName {
+      &__userName {
         color: $sideBar-fontColor;
         font-size: 16px;
         font-weight: bold;
