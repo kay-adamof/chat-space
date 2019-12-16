@@ -39,8 +39,14 @@ $sideBar-fontColor: #ffffff;
       }
     }
     &__group {
-      padding: 0 $pad 0 $pad;
-      color: $sideBar-fontColor;
+      padding: 0 $pad 1rem $pad;
+      &__name {
+        color: $sideBar-fontColor;
+      }
+      &__message {
+        padding-bottom: 1rem;
+        color: $sideBar-fontColor;
+      }
     }
   }
   .main {
